@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/planets_gif.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.2552083333333333" />
+        <entry key="app/src/main/res/layout/activity_favourite_pages.xml" value="0.18613138686131386" />
+        <entry key="app/src/main/res/layout/activity_history.xml" value="0.20376637776692708" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.256298828125" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2552083333333333" />
+        <entry key="app/src/main/res/layout/activity_main_placeholder.xml" value="0.2552083333333333" />
+        <entry key="app/src/main/res/layout/activity_map_nav.xml" value="0.2552083333333333" />
+        <entry key="app/src/main/res/layout/activity_park.xml" value="0.24114583333333334" />
+        <entry key="app/src/main/res/layout/activity_preferences_page.xml" value="0.2015810276679842" />
+        <entry key="app/src/main/res/layout/activity_settings_page.xml" value="0.17695770263671873" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.3880416870117188" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

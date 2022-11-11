@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "507905662909",
+    "project_id": "mappi-3c6d4",
+    "storage_bucket": "mappi-3c6d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507905662909:android:25ba9b0a84f0782900bcd4",
+        "android_client_info": {
+          "package_name": "com.example.mappi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507905662909-cf8gkhqg8bijlokcub5odkitnquc5ncn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSncRVi5N1BBhvpynTAV-WvOAZw9wpGvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507905662909-cf8gkhqg8bijlokcub5odkitnquc5ncn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

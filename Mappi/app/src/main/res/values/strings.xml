@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Mappi</string>
+    <string name="mapbox_access_token">sk.eyJ1IjoiYXNhbnRlc3VuaXZlcnNlIiwiYSI6ImNsNnE3ZWk2djBhcmozYm84Ynh4dmxhZXgifQ.hklq-1RonV4gwO9Op2WqYQ</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string name="user_location_permission_explanation">This app needs location permissions to show its functionality.</string>
+    <string name="user_location_permission_not_granted">You didn\'t grant location permissions.</string>
+    <string name="start_navigation_btn">start_navigation_btn</string>
+    <string name="icon_search_btn">icon_search_btn</string>
+    <string name="icon_car_traffic">icon_car_traffic</string>
+
+    <string name="your_profile">your_profile</string>
+    <string name="email_address_ProfilePage">email_address_ProfilePage</string>
+    <string name="full_name_ProfilePage">full_name_ProfilePage</string>
+    <string name="btn_logout_ProfilePage">btn_logout_ProfilePage</string>
+    <string name="driving">driving</string>
+    <string name="walking">walking</string>
+    <string name="cycling">cycling</string>
+</resources>
