@@ -7,7 +7,9 @@ import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconImage;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconOffset;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -36,6 +38,7 @@ import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.FeatureCollection;
 import com.mapbox.geojson.Point;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.camera.CameraPosition;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
@@ -45,6 +48,7 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
+import com.mapbox.mapboxsdk.plugins.building.BuildingPlugin;
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.PlaceAutocomplete;
 import com.mapbox.mapboxsdk.plugins.places.autocomplete.model.PlaceOptions;
 import com.mapbox.mapboxsdk.plugins.traffic.TrafficPlugin;
@@ -75,6 +79,7 @@ public class MapNav extends AppCompatActivity implements OnMapReadyCallback, Per
     private MapboxMap mapboxMap;
     private PermissionsManager permissionsManager;
     private Button startNavButton;
+    private Button shareButton;
 
     // variables for adding location layer
     private LocationComponent locationComponent;
@@ -88,6 +93,8 @@ public class MapNav extends AppCompatActivity implements OnMapReadyCallback, Per
     private String geoJsonSourceLayerId = "GeoJsonSourceLayerId";
     private String symbolIconId = "SymbolIconId";
     private static final int REQUEST_CODE_AUTOCOMPLETE = 7171;
+    private BuildingPlugin buildingPlugin;
+    private TrafficPlugin trafficPlugin;
 
     private static Point currentPoint, destinationPoint;
     private FirebaseAuth mAuth;
@@ -105,8 +112,21 @@ public class MapNav extends AppCompatActivity implements OnMapReadyCallback, Per
         setContentView(R.layout.activity_map_nav);
 
         mapView = findViewById(R.id.mapView);
+        shareButton = findViewById(R.id.shareButton);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Point location = Point.fromLngLat(locationComponent.getLastKnownLocation().getLongitude(),
+                        locationComponent.getLastKnownLocation().getLatitude());
+                Intent txtIntent = new Intent(android.content.Intent.ACTION_SEND);
+                txtIntent .setType("text/plain");
+                txtIntent .putExtra(android.content.Intent.EXTRA_TEXT, "My Location: " + location.latitude() + ", " + location.longitude());
+                startActivity(Intent.createChooser(txtIntent ,"Share"));
+            }
+        });
 
     }
 
@@ -174,6 +194,68 @@ public class MapNav extends AppCompatActivity implements OnMapReadyCallback, Per
             @Override
             public void onStyleLoaded(@NonNull Style style) {
 
+                SharedPreferences sharedPreferences = getSharedPreferences("UserPreference", MODE_PRIVATE);
+                String landmark = sharedPreferences.getString("landmark", "");
+
+                MarkerOptions markerOptions = new MarkerOptions();
+
+                if (landmark.equals("Historical")) {
+                    markerOptions.title("Emmanuel Cathedral");
+                    markerOptions.position(new LatLng(-29.8574342439, 31.0156402848));//-29.8574342439, 31.0156402848
+                    markerOptions.snippet(" The Emmanuel Cathedral or simply Cathedral of Durban, is the name given to the Catholic Church which is situated at the heart of Durban.\n\nFavourite");
+                    mapboxMap.addMarker((markerOptions));
+
+                    markerOptions.title("Durban Art Gallery");
+                    markerOptions.position(new LatLng(-29.8575979, 31.0356319));//-29.8575979, 31.0356319
+                    markerOptions.snippet("A pioneering national gallery and the first to recognise African craft as art in the 1970's.\n\nFavourite");
+                    mapboxMap.addMarker((markerOptions));
+
+                    markerOptions.title("Durban Natural Science Museum");
+                    markerOptions.position(new LatLng(-29.858722868725167, 31.02667587121167));
+                    markerOptions.snippet("Science museum featuring exhibits on the history of the Earth, including past & present life.\n\nFavourite");
+                    mapboxMap.addMarker((markerOptions));
+
+                } else if (landmark.equals("Modern")) {
+                    markerOptions.title("Umhlanga Arch");
+                    markerOptions.position(new LatLng(-29.727618529595105, 31.0729009405428));
+                    markerOptions.snippet("Umhlanga Arch is Durban's new lifestyle hub in Umhlanga. From luxury apartments and flexi workspaces to shops, restaurants, bars, and live events.\n\nFavourite");
+                    mapboxMap.addMarker((markerOptions));
+
+
+                    markerOptions.title("Victoria Street Market");
+                    markerOptions.position(new LatLng(-29.8566989, 331.0154723 ));
+                    markerOptions.snippet("Colloquially known as Vic, this market dates back to the 1800s and is the oldest one in the city. It is one of the most fun things to do in Durban.\n\nFavourite");
+                    mapboxMap.addMarker((markerOptions));
+
+                    markerOptions.title("Moses Mabhida Stadium");
+                    markerOptions.position(new LatLng(-29.82649, 31.03054));
+                    markerOptions.snippet("This stadium was first built for the 2010 FIFA World Cup. Though designed for football, the stadium is also used for a variety of sports including cricket, rugby, motorsports, and so on.\n\nFavourite");
+                    mapboxMap.addMarker((markerOptions));
+                } else {
+                    markerOptions.title("Durban Beach");
+                    markerOptions.position(new LatLng(-29.833747097689628, 31.036676704116775));
+                    markerOptions.snippet("Soak off in the warm water of Durban's beach.\n\nFavourite");
+                    mapboxMap.addMarker((markerOptions));
+
+                    //Durban Botanic Gardens is -29.84179, and the longitude is 31.00296.
+                    markerOptions.title("Durban Botanic Gardens");
+                    markerOptions.position(new LatLng(-29.84179, 31.00296));
+                    markerOptions.snippet("Durban's oldest public institution and Africa's oldest surviving botanical gardens.\n\nFavourite");
+                    mapboxMap.addMarker((markerOptions));
+
+                    markerOptions.title("uShaka Marine World");//-29.867687 ; Longitude: 31.047045.
+                    markerOptions.position(new LatLng(29.867687, 31.047045));
+                    markerOptions.snippet("A 16-hectare theme park containing 10,000 animal species and a total capacity of 4.6 million gallons.\n\nFavourite");
+                    mapboxMap.addMarker((markerOptions));
+                }
+
+                buildingPlugin = new BuildingPlugin(mapView, mapboxMap, style);
+                buildingPlugin.setMinZoomLevel(15f);
+                buildingPlugin.setVisibility(true);
+
+                trafficPlugin = new TrafficPlugin(mapView, mapboxMap, style);
+                trafficPlugin.setVisibility(true);
+
                 TrafficPlugin trafficPlugin = new TrafficPlugin(mapView, mapboxMap, style);
 
                 // Enable the traffic view by default
@@ -204,8 +286,18 @@ public class MapNav extends AppCompatActivity implements OnMapReadyCallback, Per
                                 .directionsRoute(currentRoute)
                                 .shouldSimulateRoute(simulateRoute)
                                 .build();
+                        double distance = currentRoute.distance() / 1000;
+                        distance = Math.round(distance * 100.0) / 100.0;
+                        double durationDouble = currentRoute.duration();
+                        int minutes = (int)durationDouble % 3600 / 60;
+                        Toast.makeText(MapNav.this, "Current Route: " + distance + " km (" + minutes + " minutes)", Toast.LENGTH_LONG).show();
+                        SharedPreferences sharedPreferences = getSharedPreferences("Last Trip", Context.MODE_PRIVATE);
+                        sharedPreferences.edit().putString("Distance", String.valueOf(distance)).apply();
+                        sharedPreferences.edit().putString("Duration", String.valueOf(durationDouble)).apply();
+                        // Call this method with Context from within an Activity
                         // Call this method with Context from within an Activity
                         NavigationLauncher.startNavigation(MapNav.this, options);
+
                     }
                 });
                 initSearch();
@@ -216,9 +308,7 @@ public class MapNav extends AppCompatActivity implements OnMapReadyCallback, Per
                 Drawable drawable = ResourcesCompat.getDrawable(getResources(), com.mapbox.mapboxsdk.R.drawable.mapbox_marker_icon_default, null);
                 Bitmap bitmap = BitmapUtils.getBitmapFromDrawable(drawable);
                 style.addImage(symbolIconId, bitmap);
-
             }
-
         });
     }
 
@@ -230,7 +320,6 @@ public class MapNav extends AppCompatActivity implements OnMapReadyCallback, Per
     private void setUpSource(Style loadedMapStyle) {
         loadedMapStyle.addSource(new GeoJsonSource(geoJsonSourceLayerId));
     }
-
 
     private void initSearch() {
         location_search = findViewById(R.id.search_button);
@@ -248,7 +337,6 @@ public class MapNav extends AppCompatActivity implements OnMapReadyCallback, Per
         });
     }
 
-
     // Method to save all data from the route to the database
     private void saveRouteHistory() {
         try {
@@ -260,7 +348,7 @@ public class MapNav extends AppCompatActivity implements OnMapReadyCallback, Per
             String currentDateTime = cal;
 
             //get user current id
-            // String userId = "nash";
+            // String userId = "";
             String userId;
             userId = mAuth.getCurrentUser().getUid();
 
@@ -393,10 +481,6 @@ public class MapNav extends AppCompatActivity implements OnMapReadyCallback, Per
             permissionsManager = new PermissionsManager(this);
             permissionsManager.requestLocationPermissions(this);
         }
-    }
-    public void AccountImageview (View view){
-        Intent intent = new Intent(MapNav.this, SettingsPage.class);
-        startActivity(intent);
     }
     }
 

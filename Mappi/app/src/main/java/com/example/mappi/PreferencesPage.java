@@ -50,7 +50,7 @@ public class PreferencesPage extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         String[] preferences = {"Kilometres", "Miles"};
-        String[] landmarks = {"Historical", "Modern", "Popular"};
+        String[] landmarks = {"Historical", "Modern", "Recreational"};
 
         ArrayAdapter<String> preferencesArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, preferences);
         ArrayAdapter<String> landmarksArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, landmarks);

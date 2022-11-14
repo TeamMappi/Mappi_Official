@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:text="_username_"
         android:textColor="@color/black"
-        android:textSize="30dp"
+        android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/emailTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,6 +104,8 @@
         app:boxStrokeColor="@color/black"
         app:boxStrokeErrorColor="@color/error"
         app:endIconMode="dropdown_menu"
+        android:hint="Preference"
+        android:fontFamily="monospace"
         app:hintTextColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/LogOutBtn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -115,7 +117,8 @@
             android:id="@+id/innerPreferencesEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:editable="false" />
+            android:editable="false"
+            android:fontFamily="monospace"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -129,7 +132,9 @@
         app:boxStrokeColor="@color/black"
         app:boxStrokeErrorColor="@color/error"
         app:endIconMode="dropdown_menu"
+        android:textAlignment="center"
         app:hintTextColor="@color/black"
+        android:hint="Landmark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -139,7 +144,8 @@
             android:id="@+id/innerLandmarkEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:editable="false" />
+            android:editable="false"
+            android:fontFamily="monospace" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -154,6 +160,7 @@
         app:boxStrokeErrorColor="@color/error"
         app:endIconMode="dropdown_menu"
         app:hintTextColor="@color/black"
+        android:hint="Transportation Mode"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -163,7 +170,8 @@
             android:id="@+id/innerTransEditText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:editable="false" />
+            android:editable="false"
+            android:fontFamily="monospace" />
     </com.google.android.material.textfield.TextInputLayout>
 
 

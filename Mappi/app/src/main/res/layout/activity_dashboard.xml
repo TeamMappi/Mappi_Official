@@ -12,6 +12,28 @@
         android:layout_height="match_parent"
         android:background="#FFFFFF">
 
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/planets_gif"
+            android:layout_width="416dp"
+            android:layout_height="507dp"
+            android:src="@drawable/giphy_2"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.0" />
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/giphy_3"
+            android:layout_width="416dp"
+            android:layout_height="507dp"
+            android:src="@drawable/giphy_3"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="0dp"
@@ -26,13 +48,14 @@
             android:id="@+id/textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:text="Hi,"
+            android:layout_marginTop="8dp"
+            android:fontFamily="monospace"
             android:gravity="center"
-            android:textSize="50sp"
+            android:text="Good day,"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -40,66 +63,49 @@
             android:id="@+id/usernameTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textColor="@color/black"
             android:layout_marginTop="10dp"
+            android:fontFamily="monospace"
             android:gravity="center"
             android:text="_username_"
+            android:textColor="@color/black"
             android:textSize="22dp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="0dp"
-            android:layout_height="160dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:srcCompat="@drawable/logo_planets" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="0dp"
-            android:layout_height="175dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="128dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
+            app:layout_constraintTop_toBottomOf="@+id/usernameTextView">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:onClick="clickedNavigation"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:onClick="clickedNavigation">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="62dp">
 
                     <TextView
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/bus"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
+                        android:fontFamily="monospace"
                         android:text="Navigation"
-                        android:textSize="24sp"
-                        android:textColor="@color/black" />
-
-                    <ImageView
-                        android:id="@+id/bus"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp" />
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
 
                 </RelativeLayout>
 
@@ -107,32 +113,24 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:onClick="clickedHistory"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:onClick="clickedHistory">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_width="wrap_content"
+                    android:layout_height="61dp">
 
                     <TextView
                         android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/imageView3"
-                        android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
+                        android:fontFamily="monospace"
                         android:text="Trip History"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
-
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"/>
 
                 </RelativeLayout>
 
@@ -143,7 +141,7 @@
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="0dp"
-            android:layout_height="175dp"
+            android:layout_height="75dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -153,10 +151,10 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
-                android:onClick="clickedParking"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:onClick="clickedParking">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -166,19 +164,12 @@
                         android:id="@+id/textView7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/train"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:textColor="@color/black"
+                        android:fontFamily="monospace"
                         android:text="Park"
+                        android:textColor="@color/black"
                         android:textSize="24sp" />
-
-                    <ImageView
-                        android:id="@+id/train"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"/>
 
                 </RelativeLayout>
 
@@ -186,10 +177,10 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
-                android:onClick="clickedProfile"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:onClick="clickedProfile">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -199,19 +190,12 @@
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/cycle"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
+                        android:fontFamily="monospace"
                         android:text="Profile"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
-
-                    <ImageView
-                        android:id="@+id/cycle"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"/>
 
                 </RelativeLayout>
 
@@ -222,20 +206,22 @@
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="0dp"
-            android:layout_height="175dp"
+            android:layout_height="75dp"
             android:orientation="horizontal"
             android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintVertical_bias="1.0">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
-                android:onClick="clickedFavourites"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:onClick="clickedFavourites">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -245,19 +231,12 @@
                         android:id="@+id/textView10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/favourites"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
-                        android:textColor="@color/black"
+                        android:fontFamily="monospace"
                         android:text="Favourites"
+                        android:textColor="@color/black"
                         android:textSize="24sp" />
-
-                    <ImageView
-                        android:id="@+id/favourites"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp" />
 
                 </RelativeLayout>
 
@@ -265,10 +244,10 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_margin="5dp"
-                android:onClick="clickedLogOut"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:onClick="clickedLogOut">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -278,19 +257,12 @@
                         android:id="@+id/textView9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/logout"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
+                        android:fontFamily="monospace"
                         android:text="Log Out"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
-
-                    <ImageView
-                        android:id="@+id/logout"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp" />
 
                 </RelativeLayout>
 

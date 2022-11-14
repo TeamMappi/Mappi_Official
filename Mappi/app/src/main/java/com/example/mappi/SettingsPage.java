@@ -49,7 +49,7 @@ public class SettingsPage extends AppCompatActivity {
         setContentView(R.layout.activity_settings_page);
 
         String[] preferences = {"Kilometres", "Miles"};
-        String[] landmarks = {"Historical", "Modern", "Popular"};
+        String[] landmarks = {"Historical", "Modern", "Recreational"};
         String[] trans = {"Car", "Cycle", "Walk"};
 
         preferencesEditText = findViewById(R.id.outerPreferencesEditText);
@@ -118,10 +118,6 @@ public class SettingsPage extends AppCompatActivity {
         }
     }
 
-    public void clickedBack(View view) {
-        this.finish();
-
-    }
 
     public void Exit(View view) {
 
