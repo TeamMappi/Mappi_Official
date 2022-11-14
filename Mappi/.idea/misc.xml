@@ -13,8 +13,8 @@
         <entry key="app/src/main/res/layout/activity_map_nav.xml" value="0.18264821370442705" />
         <entry key="app/src/main/res/layout/activity_park.xml" value="0.24114583333333334" />
         <entry key="app/src/main/res/layout/activity_preferences_page.xml" value="0.2015810276679842" />
-        <entry key="app/src/main/res/layout/activity_settings_page.xml" value="0.30537881791961863" />
-        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.3044876098632813" />
+        <entry key="app/src/main/res/layout/activity_settings_page.xml" value="0.20203561723602487" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
       </map>
     </option>
   </component>
