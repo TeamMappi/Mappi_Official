@@ -1,81 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:mapbox="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MapNav">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/traffic_toggle_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="20dp"
-        android:layout_weight="1"
-        android:contentDescription="@string/mapbox_style_traffic_day"
-        android:src="@drawable/ic_directions_car_white_24dp"
-        mapbox:fabSize="normal"
-        mapbox:layout_constraintBottom_toBottomOf="parent"
-        mapbox:layout_constraintEnd_toEndOf="parent"
-        mapbox:layout_constraintTop_toBottomOf="@+id/search_button" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/search_button"
-        android:layout_width="61dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="25dp"
-        android:contentDescription="@string/icon_search_btn"
-        mapbox:layout_constraintBottom_toTopOf="@+id/shareButton"
-        mapbox:layout_constraintEnd_toEndOf="parent"
-        mapbox:layout_constraintTop_toTopOf="parent"
-        mapbox:srcCompat="@drawable/btnsearch" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/traffic_toggle_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="323dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/mapbox_style_traffic_day"
+            android:src="@drawable/ic_directions_car_white_24dp"
+            mapbox:fabSize="normal"
+            mapbox:layout_constraintBottom_toBottomOf="parent"
+            mapbox:layout_constraintEnd_toEndOf="parent"
+            mapbox:layout_constraintTop_toBottomOf="@+id/search_button" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/shareButton"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-        android:layout_width="263dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="monospace"
-        android:text="Share"
-        android:textSize="18dp"
-        mapbox:cornerRadius="10dp"
-        mapbox:layout_constraintBottom_toBottomOf="parent"
-        mapbox:layout_constraintEnd_toStartOf="@+id/traffic_toggle_fab"
-        mapbox:layout_constraintStart_toStartOf="parent" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/shareButton"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="263dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="monospace"
+            android:text="Share"
+            android:textSize="18dp"
+            mapbox:cornerRadius="10dp"
+            mapbox:layout_constraintBottom_toBottomOf="parent"
+            mapbox:layout_constraintEnd_toStartOf="@+id/traffic_toggle_fab"
+            mapbox:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/startNavButton"
-        android:layout_width="263dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="15dp"
-        android:enabled="false"
-        android:text="Start Navigation"
-        android:fontFamily="monospace"
-        mapbox:layout_constraintEnd_toStartOf="@+id/search_button"
-        mapbox:layout_constraintStart_toStartOf="parent"
-        mapbox:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/startNavButton"
+            android:layout_width="263dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="15dp"
+            android:enabled="false"
+            android:fontFamily="monospace"
+            android:text="Start Navigation"
+            mapbox:layout_constraintEnd_toStartOf="@+id/search_button"
+            mapbox:layout_constraintStart_toStartOf="parent"
+            mapbox:layout_constraintTop_toTopOf="parent" />
 
-    <com.mapbox.mapboxsdk.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:clickable="true"
-        android:contentDescription="@string/icon_car_traffic"
-        mapbox:layout_constraintBottom_toBottomOf="parent"
-        mapbox:layout_constraintEnd_toEndOf="parent"
-        mapbox:layout_constraintHorizontal_bias="0.0"
-        mapbox:layout_constraintStart_toStartOf="parent"
-        mapbox:layout_constraintTop_toTopOf="parent"
-        mapbox:layout_constraintVertical_bias="1.0"
-        mapbox:mapbox_cameraTargetLat="29.8587"
-        mapbox:mapbox_cameraTargetLng="31.0499"
-        mapbox:mapbox_cameraZoom="16"
-        tools:ignore="SpeakableTextPresentCheck">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/search_button"
+            android:layout_width="56dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="303dp"
+            android:contentDescription="@string/icon_search_btn"
+            mapbox:layout_constraintBottom_toTopOf="@+id/traffic_toggle_fab"
+            mapbox:layout_constraintEnd_toEndOf="parent"
+            mapbox:layout_constraintTop_toTopOf="parent"
+            mapbox:srcCompat="@drawable/btnsearch" />
 
-    </com.mapbox.mapboxsdk.maps.MapView>
+        <com.mapbox.mapboxsdk.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="411dp"
+            android:layout_height="738dp"
+            android:clickable="true"
+            android:contentDescription="@string/icon_car_traffic"
+            mapbox:layout_constraintBottom_toBottomOf="parent"
+            mapbox:layout_constraintEnd_toEndOf="parent"
+            mapbox:layout_constraintHorizontal_bias="0.0"
+            mapbox:layout_constraintStart_toStartOf="parent"
+            mapbox:layout_constraintTop_toTopOf="parent"
+            mapbox:layout_constraintVertical_bias="0.0"
+            mapbox:mapbox_cameraTargetLat="29.8587"
+            mapbox:mapbox_cameraTargetLng="31.0499"
+            mapbox:mapbox_cameraZoom="16"
+            tools:ignore="SpeakableTextPresentCheck">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </com.mapbox.mapboxsdk.maps.MapView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

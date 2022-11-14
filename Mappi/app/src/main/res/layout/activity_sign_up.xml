@@ -1,158 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
     tools:context=".SignUp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
         android:layout_width="400dp"
-        android:layout_height="750dp"
+        android:layout_height="780dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/SignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
-            android:fontFamily="monospace"
-            android:text="Sign Up"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/existingAcc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="80dp"
-            android:fontFamily="monospace"
-            android:text="Already a user?"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SignUp" />
-
-        <TextView
-            android:id="@+id/txtSignUp"
-            android:layout_width="90dp"
-            android:layout_height="30dp"
-            android:fontFamily="monospace"
-            android:onClick="txtSignIn"
-            android:text=" Sign In"
-            android:textColor="@color/purple_200"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/edFullName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/existingAcc"
-            app:layout_constraintTop_toBottomOf="@+id/SignUp"
-            app:layout_constraintVertical_bias="0.519" />
-
-        <EditText
-            android:id="@+id/edUsername"
-            android:layout_width="258dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
-            android:fontFamily="monospace"
-            android:hint="Email"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            android:textColorHint="#1F1F1F"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edFullName" />
-
-        <EditText
-            android:id="@+id/edFullName"
-            android:layout_width="258dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="80dp"
-            android:ems="10"
-            android:fontFamily="monospace"
-            android:hint="Full Name"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            android:textColorHint="#1F1F1F"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/existingAcc" />
-
-        <EditText
-            android:id="@+id/edPassword"
-            android:layout_width="258dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="44dp"
-            android:ems="10"
-            android:fontFamily="monospace"
-            android:hint="Password"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            android:textColorHint="#1F1F1F"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edUsername" />
-
-        <Button
-            android:id="@+id/btnSignUp"
-            android:layout_width="125dp"
-            android:layout_height="48dp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:fontFamily="monospace"
-            android:text="Sign Up"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edPassword"
-            app:layout_constraintVertical_bias="0.84" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/edConfirmPassword"
-            android:layout_width="258dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:fontFamily="monospace"
-            android:hint="Confirm Password"
-            android:inputType="textPersonName"
-            android:textAlignment="center"
-            android:textColorHint="#1F1F1F"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edPassword"
-            app:layout_constraintVertical_bias="0.24" />
+            <TextView
+                android:id="@+id/SignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                android:fontFamily="monospace"
+                android:text="Sign Up"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/existingAcc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="68dp"
+                android:fontFamily="monospace"
+                android:text="Already a user?"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/SignUp" />
+
+            <TextView
+                android:id="@+id/txtSignUp"
+                android:layout_width="90dp"
+                android:layout_height="48dp"
+                android:fontFamily="monospace"
+                android:onClick="txtSignIn"
+                android:text=" Sign In"
+                android:textColor="@color/purple_200"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/edFullName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/existingAcc"
+                app:layout_constraintTop_toBottomOf="@+id/SignUp"
+                app:layout_constraintVertical_bias="0.552" />
+
+            <EditText
+                android:id="@+id/edUsername"
+                android:layout_width="258dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="40dp"
+                android:ems="10"
+                android:fontFamily="monospace"
+                android:hint="Email"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColorHint="#1F1F1F"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edFullName" />
+
+            <EditText
+                android:id="@+id/edFullName"
+                android:layout_width="258dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="80dp"
+                android:ems="10"
+                android:fontFamily="monospace"
+                android:hint="Full Name"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColorHint="#1F1F1F"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/existingAcc" />
+
+            <EditText
+                android:id="@+id/edPassword"
+                android:layout_width="258dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="44dp"
+                android:ems="10"
+                android:fontFamily="monospace"
+                android:hint="Password"
+                android:inputType="textPersonName|textPassword"
+                android:textAlignment="center"
+                android:textColorHint="#1F1F1F"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edUsername" />
+
+            <Button
+                android:id="@+id/btnSignUp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="125dp"
+                android:layout_height="48dp"
+                android:fontFamily="monospace"
+                android:text="Sign Up"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edPassword"
+                app:layout_constraintVertical_bias="0.84" />
+
+            <EditText
+                android:id="@+id/edConfirmPassword"
+                android:layout_width="258dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:fontFamily="monospace"
+                android:hint="Confirm Password"
+                android:inputType="textPersonName|textPassword"
+                android:textAlignment="center"
+                android:textColorHint="#1F1F1F"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edPassword"
+                app:layout_constraintVertical_bias="0.24" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
